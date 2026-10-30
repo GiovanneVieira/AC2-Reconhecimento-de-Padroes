@@ -1,0 +1,13 @@
+services:
+  jupyter:
+    container_name: jupyter_note
+    image: jupyter/scipy-notebook
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+      - JUPYTER_TOKEN=rec_padroes
